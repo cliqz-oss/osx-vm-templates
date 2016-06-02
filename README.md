@@ -19,6 +19,11 @@ Provisioning steps that are defined in the template via items in the [scripts](h
 - Chef installation via the [Chef client installer for OS X](https://www.getchef.com/download-chef-client)
 - Puppet installation via [Puppetlabs Mac installers](https://downloads.puppetlabs.com/mac) - no configuration for Puppet 4 yet, coming soon
 
+- Install all dmg's found in `packages-VM-NAME` folder
+- Enable development tools
+- Automatically accept Xcode license and install simulators for all Xcode versions
+
+
 ## Supported guest OS versions
 
 Currently this prepare script and template supports all versions of OS X that are distributed through the App Store: OS X Lion (10.7) through El Capitan (10.11).
@@ -194,3 +199,14 @@ A built box with CLI tools, Puppet and Chef is over 5GB in size. It might be adv
 ## Alternate approaches to VM provisioning
 
 Joe Chilcote has written a tool, [vfuse](https://github.com/chilcote/vfuse), which converts a never-booted OS X image (such as created with a tool like [AutoDMG](https://github.com/MagerValp/AutoDMG)) into a VMDK and configures a VMware Fusion VM. vfuse can also configure a Packer template alongside the VM, configured with the `vmware-vmx` builder.
+
+## Dependencies
+
+You will require to have valid Apple Developer Account:
+
+### Xcode 7.3
+
+Download Xcode 7.3.1 from https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_7.3.1/Xcode_7.3.1.dmg and put it into `packages-osx-xcode-7.3`.
+
+See http://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file
+
