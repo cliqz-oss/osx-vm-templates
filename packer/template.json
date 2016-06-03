@@ -106,6 +106,10 @@
         "../scripts/vmware.sh",
         "../scripts/parallels.sh",
         "../scripts/xcode-cli-tools.sh",
+        "../scripts/packages.sh",
+        "../scripts/xcode.sh",
+        "../scripts/devtools-enable.sh",
+        "../scripts/ios-simulators.sh",
         "../scripts/chef-omnibus.sh",
         "../scripts/puppet.sh",
         "../scripts/add-network-interface-detection.sh",
@@ -130,6 +134,7 @@
     }
   ],
   "variables": {
+    "vm_name": "osx-xcode-7.3",
     "autologin": "false",
     "chef_version": "none",
     "facter_version": "none",
