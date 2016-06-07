@@ -120,8 +120,7 @@
         "../scripts/puppet.sh",
         "../scripts/add-network-interface-detection.sh",
         "../scripts/autologin.sh",
-        "../scripts/system-update.sh",
-        "../scripts/shrink.sh"
+        "../scripts/system-update.sh"
       ],
       "environment_vars": [
         "AUTOLOGIN={{user `autologin`}}",
