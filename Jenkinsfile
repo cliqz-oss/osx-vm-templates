@@ -1,20 +1,24 @@
 #!groovy
 
-node('mac') {
+node(BUILD_NODE_LABEL) {
   stage 'checkout'
   git url: 'https://github.com/cliqz-oss/osx-vm-templates'
-
-  stage 'get base image'
-
+  
+  stage 'cleanup previous builds'
+  sh 'rm -rf output-vmware-iso'
+  sh 'rm -rf packer/packer_vmware-iso_vmware.box'
+ 
   stage 'build image'
   dir('packer') {
     sh '''
       packer build \
-        -var iso_url=../out/10.11.dmg \
+        -var iso_url=${BASE_ISO_PATH} \
         -var update_system=0 \
+        -only vmware-iso \
         template.json
     '''
   }
-
+  
   stage 'copy box to repository'
+  sh "vagrant box add mac-browser_ios-v${env.BUILD_ID} packer/packer_vmware-iso_vmware.box"
 }
