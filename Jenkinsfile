@@ -10,13 +10,13 @@ node(BUILD_NODE_LABEL) {
  
   stage 'build image'
   dir('packer') {
-    sh '''
+    sh """
       packer build \
         -var iso_url=${BASE_ISO_PATH} \
         -var update_system=0 \
         -only vmware-iso \
         template.json
-    '''
+    """
   }
   
   stage 'copy box to repository'
