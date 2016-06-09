@@ -20,5 +20,5 @@ node(BUILD_NODE_LABEL) {
   }
   
   stage 'copy box to repository'
-  sh "vagrant box add mac-browser_ios-v${env.BUILD_ID} packer/packer_vmware-iso_vmware.box"
+  sh "/usr/local/bin/vagrant box add mac-browser_ios-v${env.BUILD_ID} packer/packer_vmware-iso_vmware.box"
 }
