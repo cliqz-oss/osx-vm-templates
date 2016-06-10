@@ -116,6 +116,7 @@
         "../scripts/xcode.sh",
         "../scripts/devtools-enable.sh",
         "../scripts/ios-simulators.sh",
+        "../scripts/brew.sh",
         "../scripts/chef-omnibus.sh",
         "../scripts/puppet.sh",
         "../scripts/add-network-interface-detection.sh",
