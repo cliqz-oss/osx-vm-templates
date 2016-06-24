@@ -10,7 +10,7 @@ node(BUILD_NODE_LABEL) {
  
   stage 'build image'
   dir('packer') {
-    sh """
+    sh """#!/bin/bash -l
       packer build \
         -var iso_url=${BASE_ISO_PATH} \
         -var update_system=0 \
